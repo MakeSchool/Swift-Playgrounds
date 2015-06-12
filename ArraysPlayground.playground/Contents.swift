@@ -8,7 +8,7 @@ Let's look at some examples!
 
 
 /*:
-This is how you declare and initalize an array. The array type is defined as [<type of items in array>], just like below where the type of groceryList is defined as [String]. For that reason, groceryList is an array of Strings.
+This is how you declare and initalize an array. The array type is defined as [<type of items in array>], just like below where the type of groceryList is defined as [String]. For that reason, groceryList is an array of Strings. There are languages where you can have an array of objects with different types, but in Swift, you have to specify the type of the objects that will be stored in the array, and no other types can be added to that array.
 */
 let groceryList: [String] = ["eggs", "milk"]
 
@@ -38,7 +38,7 @@ if groceryList.isEmpty {
 }
 
 /*:
-If you notice, the above variables are defined with the let keyword, which makes these arrays immutable (i.e. you cannot change them).
+If you notice, the above variables are defined with the let keyword, which makes these arrays immutable. You cannot change the arrays at all in any way, so they stay as they are through out the program.
 
 Uncomment the line below to see what happens when you try to add an item to the immutable array.
 */
