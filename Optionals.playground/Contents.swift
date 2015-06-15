@@ -8,7 +8,7 @@ import UIKit
 //:
 //: Some languages, such as Objective-C, allow a variable to contain `nil` without its type expressly indicating that a value may be absent. Swift is much more strict about when variables can lack a value, and this is very helpful in avoiding bugs where we think we have a value when in fact we don't. Functions can return an optional to indicate when the operation has failed or they have no value to give back to you.
 //:
-//: Syntactically, we express the fact that a value is of optional type by appending a question mark (?) to the type name. For example, here is how we declare a variable of type "optional `Int`":
+//: Syntactically, we express the fact that a value is of optional type by appending a question mark (?) to the type name. For example, here is how we declare a variable of type `Int?` (read as "optional `Int`"):
 
 var maybeAnInt: Int? = 15
 
@@ -20,7 +20,7 @@ maybeAnInt = nil
 
 //: ### Unwrapping an Optional
 //:
-//: We can test whether an optional has a value by comparing it to `nil`. If it is not equal to `nil`, it contains a value. We can then safely use **force unwrapping** to get its value. Force unwrapping is done by putting an exclamation point (!) after the name of the variable we want to unwrap. This assures Swift that the optional contains a value and that it is therefore safe to read. Here, we test whether `maybeAnInt` has a value, and conditionally print its value after force-unwrapping it.
+//: When we get the value from an optional we say we "unwrap" it. We can test whether an optional has a value by comparing it to `nil`. If it is not equal to `nil`, it contains a value. We can then safely use **force unwrapping** to get its value. Force unwrapping is done by putting an exclamation point (!) after the name of the variable we want to unwrap. This assures Swift that the optional contains a value and that it is therefore safe to read. Here, we test whether `maybeAnInt` has a value, and conditionally print its value after force-unwrapping it.
 
 if maybeAnInt != nil {
     println("maybeAnInt contains a value, and it is \(maybeAnInt!)")
@@ -70,7 +70,22 @@ println(alwaysAString)
 
 //let intDescription = maybeAnInt.description // Value of optional type 'Int?' not unwrapped!
 
-//: _Note_: There is a technique called **optional chaining** that allows you to conditionally call method and access properties of optionals. [Read more here if you are interested](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html ).
+//: This restriction is lifted if you use a technique called **optional chaining**. Chaining allows you to try to call a method on an optional, which calls the method if the optional has a value, and returns `nil` if it does not. Chaining is performed by placing a question mark between the variable name and the dot, parenthesis, or bracket that follows it:
+
+let optionalArray: [Int]? = [ 1, 2, 3, 4 ]
+let arrayLength = optionalArray?.count
+let firstElement = optionalArray?[0]
+
+//: Placing a `?` after the name `optionalArray` will cause Swift to check whether the variable is `nil` before attempting to call `count` or subscript into the array. The types of these expressions are optionals of the same type as the return type of method (so the call to `count`, which normally produces an `Int`, produces an `Int?` in this case).
+//: 
+//: Set `optionalArray` to `nil` and observe how the output values change.
+
+//: ### The Nil Coalescing Operator
+//:
+//: Sometimes we want to use a default value in the place of an optional when it turns out to be `nil`. For example, we might want to provide a placeholder name for an object when its own `name` property is `nil`. Swift provides a way to do this very compactly: the nil-coalescing operator (`??`). When the optional to the left of the operator has a value, that value becomes the value of the expression. When the optional is `nil`, the value of the expression is the value on the right of the operator. Let's look at an example:
+
+let optionalString: String? = nil
+let petName = optionalString ?? "Fido"
 
 //: ### Recap
 //:
