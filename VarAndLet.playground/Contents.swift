@@ -37,6 +37,28 @@ Cannot assign to 'let' value 'pi'
 To get rid of the error, comment it again by adding `//` to the beginning of that line.
 */
 
+
+/*:
+## Naming Variables and Constants
+When naming variables and constants, most programmers use a convention called Camel Case. Here's how you can follow it:
+*/
+
+// Correct
+var yourHeight = 5
+let upcomingAppVersion = 1.1
+
+// Wrong
+var YourHeight = 6
+let Upcomingappversion = 1.1
+
+
+/*:
+The rules are as follows:
+* Start the first word with a lowercase letter.
+* Start any subsequent word with an uppercase letter.
+*/
+
+
 /*:
 For more details on what we covered in this tutorial, please visit [Apple's Variables and Constants guide.](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID310)
 */
