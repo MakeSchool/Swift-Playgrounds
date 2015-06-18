@@ -1,6 +1,6 @@
 import UIKit
 
-//: ## Optionals in Swift
+//: # Optionals in Swift
 //:
 //: ### Introduction to Optionals
 //:
