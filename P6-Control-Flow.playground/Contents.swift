@@ -31,7 +31,11 @@ for city in cities {
     println("I live in \(city)")
 }
 
-//: We can also use a `for-in` with a range of numbers
+/*:
+The `for-in` loop is similar to a Python `for` loop or a Java `enhanced for` loop.
+
+We can also use a `for-in` with a range of numbers:
+*/
 
 for index in 1...3 {
     println("I can count to \(index)")
@@ -39,15 +43,15 @@ for index in 1...3 {
 
 /*:
 ### `for`
-You can also define for loops in the following format
+You can also define for loops in the following format:
 */
 
 for var index = 0; index < 3; index++ {
     println("I can count to \(index)")
 }
 /*:
-
-The format is like the following
+This looks more like a standard Java for loop.
+The format is as follows:
 
 for initialization; condition; increment {
 statements
@@ -56,7 +60,7 @@ statements
 
 /*:
 ## `while` Loops
-A `while` loop keeps running as long as its condition is `true`
+A `while` loop keeps running as long as its condition is `true`.
 */
 
 var result = 1
@@ -68,7 +72,8 @@ while result < 60 {
 println(result)
 
 /*:
-`result` will be updated like the following: 1, 5, 25, 50, 125. Notice that the loop ran 4 times, but it stopped because 125 is more than 60.
+`result` will be updated as follows: 1, 5, 25, 50, 125. Notice that the loop ran 4 times, but it stopped once `result` became more than 60.
+
 The format for `while` loops is:
 
 while condition {
@@ -77,7 +82,9 @@ statements
 */
 
 /*:
-## `switch` statment
+## `switch` statement
+A switch statement allows you to define what happens for specific values of a variable.
+Here, we decide what to do based on what `grade` is. We could do the same thing with lots of `if` statements, but the `switch` syntax is more compact and easier to read.
 */
 
 let grade = "A"
@@ -94,7 +101,7 @@ default:
 }
 /*:
 Two important things you should keep in mind when using `switch` in Swift:
-* You don't need to add a `break` statment after every condition.
+* You don't need to add a `break` statment after every condition. (Yay!)
 * The `default` case is like an `else` case that would run if non of the previous conditions are met. Every `switch` statment must have a `default` case.
 */
 
