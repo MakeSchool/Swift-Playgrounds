@@ -70,7 +70,7 @@ before calling
 
     super.init
 
-That is because Swift will give you an error if you call `super.init` before assinging all the properties in the class that are not optional.
+That is because Swift will give you an error if you call `super.init` before assigning all the properties in the class that are not optional.
 
 Try to switch
 
@@ -112,7 +112,6 @@ let cool = CoolHuman(talent: "just cool", otherTalent: "more talent", pounds: 0)
 /*:
 We still had to assign `talent` before calling `super.init` since it's a non-optional. However, since `otherTalent` is an optional, we were able to assign it after calling `super.init`.
 */
-
 /*:
 ## Convenience Initializers
 When using multiple initializers, it would be nice to have a way to link them all together. To do that, we can use Convenience Initializers.
@@ -180,7 +179,7 @@ Every subclass of `Fox` must implement
 
 /*:
 ## Failable Initializers
-Failable initializers set requirments for the parameters passed into an initializer.
+Failable initializers set requirements for the parameters passed into an initializer.
 */
 
 class Cow {
