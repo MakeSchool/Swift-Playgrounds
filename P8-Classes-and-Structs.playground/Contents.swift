@@ -2,7 +2,6 @@
 # Classes and Structures
 Classes and Structures will be the building blocks of your apps.
 */
-
 /*:
 ## Classes
 
@@ -10,42 +9,35 @@ Classes are generally used for code that you might want to use multiple times. F
 * The number of `wheels` that the vehicle has, with `4` as the default value.
 * The vehicle's `color`, with `"black"` as the default value.
 */
-
 class Vehicle  {
     var wheels = 4
     var color = "black"
 }
-
 /*:
 Notice that unlike variable names, class names should start with an Uppercase letter.
 
 Defining our `Vehicle` class allows us to specify the capabilities of every vehicle we have in our app. To create a new vehicle, let's create an instance of our `Vehicle` class.
 */
-
 let myCar = Vehicle()
 
-//: You can access the properties of `myCar`
+//: You can access the properties of `myCar` as follows;
 
 myCar.wheels
 myCar.color
 
 //: Note: You can see the values of the properties on the right side of your screen.
-
-//: Let's try changing `myCar`'s color
+//: Let's try changing `myCar`'s color:
 
 myCar.color = "red"
-
 myCar.color
 
 /*:
 ### Subclasses
-Let's say that in your app, there are multiple types of vehicles. For example, we might have cars, motorcycles and boats. To structure your app well, you'd define a subclass of `Vehicle` called `Car`. A subclass inherits all the properties of it's parent class, meaning that `Car` will have a `color` and `wheels` from the moment it's born. To make our `Car` class even better, let's add a new property to it called `type`.
+Let's say that in your app, there are multiple types of vehicles. For example, we might have cars, motorcycles and boats. To structure your app well, you'd define a subclass of `Vehicle` called `Car`. A subclass inherits all the properties of its parent class, meaning that `Car` will have a `color` and `wheels` from the moment it's born. To make our `Car` class even better, let's add a new property to it called `type`.
 */
-
 /*:
 Before we start coding, we should keep in mind that even though every `Car` must have a `type`, there is no logical default value for `type`. For example, the  `Car`'s `type` could be a sedan, coupe, van etc. To deal with this problem, we are going to add an initializer. An initializer allows you to pass in some parameters that might be necessary to create an instance of that class.
 */
-
 class Car: Vehicle {
     // 1
     let type : String
@@ -56,20 +48,17 @@ class Car: Vehicle {
         self.type = type
     }
 }
-
 /*:
 There are a few things worth mentioning about the previous code:
-1. since each `Car` will always have one type that will never be changed, `type` is created as a constant using `let`.
+1. Since each `Car` will always have one type that will never be changed, `type` is created as a constant using `let`.
 2. Using `init`, we create an initializer that takes in a `String` called `type`.
-3. To set `type` from #1 to the passed in `type` from #2, we use `self.type`. `self` refers to the curret instance of `Car`.
+3. To set `type` from #1 to the passed-in `type` from #2, we use `self.type`. `self` refers to the current instance of `Car`.
 */
-
 let taxi = Car(type: "sedan")
 
 taxi.type
 taxi.color
 taxi.wheels
-
 /*:
 Notice how even though we didn't define `color` and `wheels` within `Car`, they were inherited from `Vehicle`.
 
@@ -173,9 +162,8 @@ electric.size.height
 /*:
 Notice how every instance of a struct saves its parameters separately. For example, changing `hybrid.size.height` doesn't change `electric.size.height`
 */
-
 /*:
-What if we want a stuct to hold some values that are not unique to an instance, but are universal to where ever we access that struct from?
+What if we want a stuct to hold some values that are not unique to an instance, but are universal to whereever we access that struct from?
 */
 
 struct Regulations {
@@ -217,7 +205,6 @@ boat.withinSpeedLimit()
 /*:
 Using the keyword `static` for the property enables us to access it from any place in our code without initializing `Regulations`.
 */
-
 /*:
 ### Classes vs. Structs
 There are major differences between classes and structs, but one very important one is the following:
@@ -242,8 +229,8 @@ someBoat.speed
 The reason `someBoat.speed` was changed when we changed `coolBoat.speed` is that `someBoat` and `coolBoat` are actually both pointing at the same object. The reason this is happening is because when we set `someBoat` to `coolBoat`, Swift is not copying the object itself to someBoat. Swift is copying a reference to the object and setting it to `someBoat`; therefor, both variables are poiting to the same object because they hold the same reference.
 */
 
-
 // Structs
+
 var coolSize = Size()
 var someSize = coolSize
 
