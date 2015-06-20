@@ -1,6 +1,6 @@
 /*:
 # Types
-If you want to store a certain type of a value (like a String or and Int) in a variable, you can do it as follows:
+If you want to store a certain type of a value (like a String or an Int) in a variable, you can do it as follows:
 */
 
 var population : Int = 20
