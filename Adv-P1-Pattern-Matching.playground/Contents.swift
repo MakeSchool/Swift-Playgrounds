@@ -1,5 +1,5 @@
 import UIKit
-//: ## Pattern Matching in Switch-Case Statements
+//: # Pattern Matching in Switch-Case Statements
 //:
 //: In this playground, we'll look at some of the more powerful features of switch-case blocks in Swift.
 //:
